@@ -1,56 +1,81 @@
 body {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 2vw;
   background: #f0e7d8;
   font-family: Arial, sans-serif;
-  margin-top: 60px
+  margin-top: 6vh;
+  flex-direction: column;
+  align-items: center;
 }
+
 #board {
+  width: 90vw;
+  max-width: 480px;
+  height: 90vw;
+  max-height: 480px;
   display: grid;
-  grid-template-columns: repeat(8, 60px);
-  grid-template-rows: repeat(8, 60px);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   border: 3px solid #444;
   background-color: #dad6ce;
+  box-sizing: border-box;
 }
+
 .cell {
   border: 1px solid #666;
-  width: 60px;
-  height: 60px;
-  box-sizing: border-box;
   position: relative;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .cell.selected {
   outline: 3px solid #ff9800;
 }
+
 .piece {
-  width: 50px;
-  height: 50px;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
-  margin: 5px auto;
   pointer-events: none;
+  display: block;
 }
+
 .black {
   background: rgb(32, 32, 32);
 }
+
 .white {
   background: #bd7f34;
 }
+
 #counters {
   position: fixed;
-  top: 0;  
+  top: 0;
+  width: 100%;
   text-align: center;
-  font-family: Georgia;
-  margin-bottom: 10px;
-  font-size: 40px
-}
-#turn-text {
-  position: fixed;
-  bottom: 0;  
-  text-align: center;
-  font-family: Georgia;
-  margin-bottom: 10px;
-  font-size: 40px
+  font-family: Georgia, serif;
+  margin-bottom: 1vh;
+  font-size: 3vw;
+  background: #f0e7d8cc;
+  padding: 0.5vh 0;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
+#turn-text {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Georgia, serif;
+  margin-bottom: 1vh;
+  font-size: 4vw;
+  background: #f0e7d8cc;
+  padding: 0.5vh 0;
+  box-sizing: border-box;
+  z-index: 1000;
+}
