@@ -33,7 +33,7 @@ body {
 }
 
 .cell.selected {
-  outline: 3px solid #ff9800;
+  outline: none;
 }
 
 .piece {
@@ -42,14 +42,23 @@ body {
   border-radius: 50%;
   pointer-events: none;
   display: block;
+  transition: transform 1s, opacity 1s;
 }
 
 .black {
-  background: rgb(32, 32, 32);
+  background: rgb(77, 77, 77);
 }
 
 .white {
   background: #bd7f34;
+}
+
+.piece.selected.black {
+  background: rgb(0, 0, 0);
+}
+
+.piece.selected.white {
+  background: #6e4a1e;
 }
 
 #counters {
